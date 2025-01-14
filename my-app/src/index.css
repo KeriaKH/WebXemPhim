@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base{
+    body{
+        @apply bg-slate-700 
+    }
+}
+
+/* Tùy chỉnh thanh cuộn cho phần tử */
+
+  
+  /* Tùy chỉnh thanh cuộn */
+  .scrollable::-webkit-scrollbar {
+    width: 5px; /* Chiều rộng của thanh cuộn */
+  }
+  
+  /* Tùy chỉnh phần thân của thanh cuộn */
+  .scrollable::-webkit-scrollbar-thumb {
+    background-color: red; /* Màu nền của thanh cuộn */
+    border-radius: 0px; /* Làm tròn góc của thanh cuộn */
+    border: 0px; /* Thêm viền xung quanh thanh cuộn */
+  }
+  
+  /* Tùy chỉnh phần đường chạy của thanh cuộn */
+  .scrollable::-webkit-scrollbar-track {
+    background-color: rgba(0, 0, 0, 0.315);
+    border-radius: 0px; /* Làm tròn góc của đường chạy */
+  }
