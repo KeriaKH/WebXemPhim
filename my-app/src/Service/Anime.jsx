@@ -2,7 +2,7 @@
 
 export const getListAnime=async()=>{
     try {
-        const res= await fetch('http://localhost:5000/Anime/getAnimeList') 
+        const res= await fetch('https://animevv.vercel.app/Anime/getAnimeList') 
         return res.json()
     } catch (error) {
         console.error('Error fetching Anime data:', error.message);
@@ -11,7 +11,7 @@ export const getListAnime=async()=>{
 
 export const getAnime=async(id)=>{
     try {
-        const res=await fetch(`http://localhost:5000/Anime/getAnime/${id}`)
+        const res=await fetch(`https://animevv.vercel.app/Anime/getAnime/${id}`)
         return res.json()
     } catch (error) {
         console.error('Error fetching Anime data:', error.message);
@@ -20,7 +20,7 @@ export const getAnime=async(id)=>{
 
 export const getListChapter=async(id)=>{
     try {
-        const res=await fetch(`http://localhost:5000/Chapter/getListChapter/${id}`)
+        const res=await fetch(`https://animevv.vercel.app/Chapter/getListChapter/${id}`)
         return res.json()
     } catch (error) {
         console.error('Error fetching Anime data:', error.message);
