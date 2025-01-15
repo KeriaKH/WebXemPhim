@@ -1,26 +1,17 @@
 {
-    "builds": [
-      {
-        "src": "backend/server.js",
-        "use": "@vercel/node"
-      },
-      {
-        "src": "my-app/package.json",
-        "use": "@vercel/static-build",
-        "config": {
-          "distDir": "build"
-        }
-      }
-    ],
     "rewrites": [
       {
         "source": "/api/(.*)",
-        "destination": "/backend/server.js"
+        "destination": "/backend/api.js"
       },
       {
         "source": "/(.*)",
-        "destination": "/my-app/build/$1"
+        "destination": "/frontend/index.html"
       }
-    ]
+    ],
+    "env": {
+    "MONGO_URI": "mongodb+srv://<username>:<password>@webxemphim.yp5ib.mongodb.net/QuanLyAnime",
+    "PORT": "5000"
+  }
   }
   
