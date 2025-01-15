@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const app = require('./app');
 
 // Kết nối MongoDB
-const uri="mongodb+srv://22521672:220508@webxemphim.yp5ib.mongodb.net/QuanLyAnime?retryWrites=true&w=majority&appName=WebXemPhim"
+const uri = process.env.MONGODB_URI || "mongodb+srv://22521672:220508@webxemphim.yp5ib.mongodb.net/QuanLyAnime?retryWrites=true&w=majority&appName=WebXemPhim";
 mongoose.connect(uri, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
