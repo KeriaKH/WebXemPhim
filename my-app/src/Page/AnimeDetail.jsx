@@ -45,7 +45,7 @@ export default function AnimeDetail({ AnimeList }) {
           </div>
         </div>
         <div className='w-[28%] space-y-5'>
-          <RandomAnime />
+          <RandomAnime AnimeList={AnimeList} />
           <TopAnime AnimeList={AnimeList} />
         </div>
       </div>

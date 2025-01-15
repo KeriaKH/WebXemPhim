@@ -20,15 +20,33 @@ export default function WatchPage({ AnimeList }) {
         })
     }, [id])
 
-    const nav=useNavigate()
-    const change=(index)=>()=>{
-        nav(`/Phim/${id}/${index+1}`)
+    const nav = useNavigate()
+    const change = (index) => () => {
+        nav(`/Phim/${id}/${index + 1}`)
     }
 
     if (!Anime) {
         return (
             <div className="flex justify-center items-center h-full">
-                <p className="text-white text-xl">Loading...</p> 
+                <p className="text-white text-xl">Loading...</p>
+            </div>
+        );
+    }
+
+    if (!Chapters || !Chapters.length) {
+        return (
+            <div className="flex justify-center items-center h-full">
+                <p className="text-white text-xl">
+                    {Chapters ? "No Chapters Available" : "Loading Chapters..."}
+                </p>
+            </div>
+        );
+    }
+
+    if (!Chapters[tap - 1]) {
+        return (
+            <div className="flex justify-center items-center h-full">
+                <p className="text-white text-xl">Invalid Chapter Selection</p>
             </div>
         );
     }
@@ -36,15 +54,15 @@ export default function WatchPage({ AnimeList }) {
         <div className='justify-center flex h-full'>
             <div className='w-[60vw] flex bg-custom_black justify-between p-5'>
                 <div className='w-[70%] h-full '>
-                    <VideoPlayer url={Chapters[tap-1].URL} />
+                    <VideoPlayer url={Chapters[tap - 1].URL} />
                     <div className='w-full p-3 flex bg-slate-800 mt-10'>
                         {Array.from({ length: Chapters.length }, (_, index) => (
-                            <button onClick={change(index)} key={index} className={`p-3 text-white ml-2 hover:bg-slate-500 duration-300 ${index===tap-1?"bg-slate-500":"bg-slate-950"}`}>{index + 1}</button>
+                            <button onClick={change(index)} key={index} className={`p-3 text-white ml-2 hover:bg-slate-500 duration-300 ${index === tap - 1 ? "bg-slate-500" : "bg-slate-950"}`}>{index + 1}</button>
                         ))}
                     </div>
                 </div>
                 <div className='w-[28%] space-y-5'>
-                    <RandomAnime />
+                    <RandomAnime AnimeList={AnimeList} />
                     <TopAnime AnimeList={AnimeList} />
                 </div>
             </div>

@@ -26,7 +26,7 @@ export default function HomePage({AnimeList}) {
             <button className='w-full text-white bg-slate-900 mt-4 p-2 font-bold text-[18px] rounded hover:text-slate-700 duration-200'>XEM THÊM...</button>
           </div>
           <div className='w-[28%] space-y-5'>
-              <RandomAnime/>
+              <RandomAnime AnimeList={AnimeList}/>
               <TopAnime AnimeList={AnimeList}/>
           </div>
         </div>
