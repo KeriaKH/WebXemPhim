@@ -8,10 +8,6 @@
         "source": "/(.*)",
         "destination": "/frontend/index.html"
       }
-    ],
-    "env": {
-    "MONGO_URI": "mongodb+srv://22521672:220508@webxemphim.yp5ib.mongodb.net/QuanLyAnime",
-    "PORT": "5000"
-  }
+    ]
   }
   
