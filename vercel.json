@@ -1,12 +1,25 @@
 {
+    "builds": [
+      {
+        "src": "backend/server.js",
+        "use": "@vercel/node"
+      },
+      {
+        "src": "my-app/package.json",
+        "use": "@vercel/static-build",
+        "config": {
+          "distDir": "build"
+        }
+      }
+    ],
     "rewrites": [
       {
         "source": "/api/(.*)",
-        "destination": "/backend/api.js"
+        "destination": "/backend/server.js"
       },
       {
         "source": "/(.*)",
-        "destination": "/frontend/index.html"
+        "destination": "/my-app/build/$1"
       }
     ]
   }
