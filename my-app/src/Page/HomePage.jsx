@@ -4,7 +4,6 @@ import ListAnime from '../Component/ListAnime';
 import ListBigAnimeCard from '../Component/ListBigAnimeCard';
 import RandomAnime from '../Component/RandomAnime';
 import TopAnime from '../Component/TopAnime';
-import { getListAnime } from '../Service/Anime';
 
 export default function HomePage({AnimeList}) {
 
